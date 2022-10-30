@@ -195,7 +195,7 @@ function Navbar({ show }: { show: boolean }) {
           <li>
             <Dropdown droplist={droplist} position="br">
               <Avatar size={32} style={{ cursor: 'pointer' }}>
-                <img alt="avatar" src={userInfo.avatar} />
+                <img alt="avatar" src='https://upload.wikimedia.org/wikipedia/zh/9/9f/Cqut_logo.jpg' />
               </Avatar>
             </Dropdown>
           </li>

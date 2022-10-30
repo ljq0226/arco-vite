@@ -18,7 +18,7 @@
   box-sizing: border-box;
 }
 .img {
-  width: 30px;
+  width: 50px;
 }
 .logo-name {
   color: var(--color-text-1);

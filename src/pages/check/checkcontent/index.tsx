@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { Typography, Card } from '@arco-design/web-react';
 
-const Check = () => {
+function Example() {
   return (
-    <div>Check</div>
-  )
+    <Card style={{ height: '80vh' }}>
+      <Typography.Title heading={6}>
+        This is a very basic and simple page
+      </Typography.Title>
+      <Typography.Text>You can add content here :)</Typography.Text>
+    </Card>
+  );
 }
 
-export default Check
+export default Example;

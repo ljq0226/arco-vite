@@ -188,6 +188,9 @@ function PageLayout() {
     setSelectedKeys(newSelectedKeys);
     setOpenKeys(newOpenKeys);
   }
+  const breadClick = (index) => {
+    console.log(index);
+  }
 
   useEffect(() => {
     const routeConfig = routeMap.current.get(pathname);
@@ -242,7 +245,10 @@ function PageLayout() {
                 <div className={styles['layout-breadcrumb']}>
                   <Breadcrumb>
                     {breadcrumb.map((node, index) => (
-                      <Breadcrumb.Item key={index}>
+                      <Breadcrumb.Item key={index} onClick={(e) => {
+                        e.preventDefault();
+                        breadClick(pathname)
+                      }}>
                         {typeof node === 'string' ? locale[node] || node : node}
                       </Breadcrumb.Item>
                     ))}
