@@ -13,15 +13,15 @@ function App() {
     },
     {
       key: '2',
-      name: '震惊,一男子竟...',
-      salary: '社会',
+      name: '震惊 , ...',
+      salary: '新闻 学校',
       address: '2022/08/08',
-      email: 'jane.doe@example.com',
+      email: 'aasasddoe@example.com',
     },
     {
       key: '3',
       name: '震惊,一男子竟...',
-      salary: '社会',
+      salary: '娱乐',
       address: '2022/08/08',
       email: 'jane.doe@example.com',
     },
@@ -31,6 +31,10 @@ function App() {
     {
       title: '标题',
       dataIndex: 'name',
+    },
+    {
+      title: '关键字',
+      dataIndex: 'salary',
       filterIcon: <IconSearch />,
       filterDropdown: ({ filterKeys, setFilterKeys, confirm }) => {
         return (
@@ -50,16 +54,12 @@ function App() {
           </div>
         );
       },
-      onFilter: (value, row) => (value ? row.name.indexOf(value) !== -1 : true),
+      onFilter: (value, row) => (value ? row.salary.indexOf(value) !== -1 : true),
       onFilterDropdownVisibleChange: (visible) => {
         if (visible) {
           setTimeout(() => inputRef.current.focus(), 150);
         }
       },
-    },
-    {
-      title: '关键字',
-      dataIndex: 'salary',
     },
     {
       title: '日期',
