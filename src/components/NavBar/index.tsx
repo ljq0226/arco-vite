@@ -27,7 +27,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { GlobalState } from '@/store';
 import { GlobalContext } from '@/context';
 import useLocale from '@/utils/useLocale';
-import Logo from '@/assets/logo.svg';
 import IconButton from './IconButton';
 import Settings from '../Settings';
 import styles from './style/index.module.less';

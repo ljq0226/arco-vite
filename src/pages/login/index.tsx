@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import Footer from '@/components/Footer';
-import Logo from '@/assets/logo.svg';
 import LoginForm from './form';
 import LoginBanner from './banner';
 import styles from './style/index.module.less';
@@ -13,7 +12,6 @@ function Login() {
   return (
     <div className={styles.container}>
       <div className={styles.logo}>
-        <Logo />
         <div className={styles['logo-text']}>重庆理工大学新闻发布平台</div>
       </div>
       <div className={styles.content}>
