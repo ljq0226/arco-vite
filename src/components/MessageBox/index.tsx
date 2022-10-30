@@ -32,6 +32,7 @@ function DropContent() {
     axios
       .get('/api/message/list')
       .then((res) => {
+        console.log(res.data);
         setSourceData(res.data);
       })
       .finally(() => {

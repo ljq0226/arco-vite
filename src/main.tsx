@@ -7,7 +7,6 @@ import { ConfigProvider } from '@arco-design/web-react';
 import zhCN from '@arco-design/web-react/es/locale/zh-CN';
 import enUS from '@arco-design/web-react/es/locale/en-US';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import axios from 'axios';
 import rootReducer from './store';
 import PageLayout from './layout';
 import { GlobalContext } from './context';
@@ -18,7 +17,43 @@ import useStorage from './utils/useStorage';
 import './mock';
 
 const store = createStore(rootReducer);
-
+const userInfo = {
+  "name": "王立群",
+  "avatar": "https://lf1-xgcdn-tos.pstatp.com/obj/vcloud/vadmin/start.8e0e4855ee346a46ccff8ff3e24db27b.png",
+  "email": "wangliqun@email.com",
+  "job": "frontend",
+  "jobName": "前端开发工程师",
+  "organization": "Frontend",
+  "organizationName": "前端",
+  "location": "beijing",
+  "locationName": "北京",
+  "introduction": "王力群并非是一个真实存在的人。",
+  "personalWebsite": "https://www.arco.design",
+  "verified": true,
+  "phoneNumber": "177******67",
+  "accountId": "xyos-16875687",
+  "registrationTime": "1997-02-04 06:56:50",
+  "permissions": {
+      "工作台": [
+          "*"
+      ],
+      "新闻分类": [
+          "*"
+      ],
+      "内容编辑": [
+          "*"
+      ],
+      "内容发布": [
+          "*"
+      ],
+      "查看留言": [
+          "*"
+      ],
+      "校验": [
+          "*"
+      ]
+  }
+}
 function Index() {
   const [lang, setLang] = useStorage('arco-lang', 'en-US');
   const [theme, setTheme] = useStorage('arco-theme', 'light');
@@ -39,11 +74,9 @@ function Index() {
       type: 'update-userInfo',
       payload: { userLoading: true },
     });
-    axios.get('/api/user/userInfo').then((res) => {
-      store.dispatch({
-        type: 'update-userInfo',
-        payload: { userInfo: res.data, userLoading: false },
-      });
+    store.dispatch({
+      type: 'update-userInfo',
+      payload: { userInfo:userInfo , userLoading: false },
     });
   }
 

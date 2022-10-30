@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, Card, Radio, Table, Typography } from '@arco-design/web-react';
 import { IconCaretDown, IconCaretUp } from '@arco-design/web-react/icon';
-import axios from 'axios';
 import useLocale from '@/utils/useLocale';
 import locale from './locale';
 import styles from './style/popular-contents.module.less';
-
+import { list, total } from './data/pop'
 function PopularContent() {
   const t = useLocale(locale);
   const [type, setType] = useState(0);
@@ -13,20 +12,11 @@ function PopularContent() {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
-
   const fetchData = useCallback(() => {
     setLoading(true);
-    axios
-      .get(
-        `/api/workplace/popular-contents?page=${page}&pageSize=5&category=${type}`
-      )
-      .then((res) => {
-        setData(res.data.list);
-        setTotal(res.data.total);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    setData(list);
+    setTotal(total);
+    setLoading(false);
   }, [page, type]);
 
   useEffect(() => {

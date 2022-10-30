@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Link, Card, Skeleton, Tag, Typography } from '@arco-design/web-react';
 import useLocale from '@/utils/useLocale';
 import locale from './locale';
 import styles from './style/announcement.module.less';
-
+import { annou } from './data/cat'
 function Announcement() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -13,14 +12,8 @@ function Announcement() {
 
   const fetchData = () => {
     setLoading(true);
-    axios
-      .get('/api/workplace/announcement')
-      .then((res) => {
-        setData(res.data);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    setData(annou);
+    setLoading(false);
   };
 
   useEffect(() => {
