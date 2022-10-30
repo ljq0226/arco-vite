@@ -3,7 +3,7 @@ import { Card, Spin, Typography } from '@arco-design/web-react';
 import { DonutChart } from 'bizcharts';
 import useLocale from '@/utils/useLocale';
 import locale from './locale';
-import { data } from './data/cat'
+import { contentData } from './data/cat'
 function PopularContent() {
   const t = useLocale(locale);
   const [data, setData] = useState([]);
@@ -11,7 +11,7 @@ function PopularContent() {
 
   const fetchData = () => {
     setLoading(true);
-    setData(data);
+    setData(contentData);
     setLoading(false);
   };
 

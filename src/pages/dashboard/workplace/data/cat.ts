@@ -1,4 +1,4 @@
-const data = [
+const contentData = [
   {
     "type": "纯文本",
     "count": 148564,
@@ -42,4 +42,4 @@ const annou = [
     "content": "新增内容已经通过审核，详情请点击查看。"
   }
 ]
-export { data, annou }
+export { contentData, annou }
