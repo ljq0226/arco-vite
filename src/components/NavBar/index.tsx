@@ -150,7 +150,7 @@ function Navbar({ show }: { show: boolean }) {
             placeholder={t['navbar.search.placeholder']}
           />
         </li>
-        <li>
+        {/* <li>
           <Select
             triggerElement={<IconButton icon={<IconLanguage />} />}
             options={[
@@ -175,7 +175,7 @@ function Navbar({ show }: { show: boolean }) {
           <MessageBox>
             <IconButton icon={<IconNotification />} />
           </MessageBox>
-        </li>
+        </li> */}
         <li>
           <Tooltip
             content={
