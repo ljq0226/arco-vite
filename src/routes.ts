@@ -23,12 +23,52 @@ export const routes: IRoute[] = [
     ],
   },
   {
-    name: '分类管理',
+    name: '分类',
     key: 'sortmanagement',
     children: [
       {
         name: '新闻分类',
         key: 'sortmanagement/newssort',
+      },
+    ]
+  },
+  {
+    name: '内容',
+    key: 'contentmanagement',
+    children: [
+      {
+        name: '内容编辑',
+        key: 'contentmanagement/editcontent',
+      },
+    ]
+  },
+  {
+    name: '发布',
+    key: 'publishmanagement',
+    children: [
+      {
+        name: '内容发布',
+        key: 'publishmanagement/newspublish',
+      },
+    ]
+  },
+  {
+    name: '留言评论',
+    key: 'messagemanagement',
+    children: [
+      {
+        name: '查看留言',
+        key: 'messagemanagement/message',
+      },
+    ]
+  },
+  {
+    name: '合法性校验',
+    key: 'check',
+    children: [
+      {
+        name: '校验',
+        key: 'check/checkcontent',
       },
     ]
   },

@@ -4,9 +4,13 @@ import { Layout, Menu, Breadcrumb, Spin } from '@arco-design/web-react';
 import cs from 'classnames';
 import {
   IconDashboard,
-  IconTag,
+  IconTags,
   IconMenuFold,
   IconMenuUnfold,
+  IconEdit,
+  IconUpload,
+  IconCheckCircle,
+  IconMessage
 } from '@arco-design/web-react/icon';
 import { useSelector } from 'react-redux';
 import qs from 'query-string';
@@ -31,8 +35,18 @@ function getIconFromKey(key) {
   switch (key) {
     case 'dashboard':
       return <IconDashboard className={styles.icon} />;
-    case 'example':
-      return <IconTag className={styles.icon} />;
+    case 'sortmanagement':
+      return <IconTags className={styles.icon} />;
+    case 'contentmanagement':
+      return <IconEdit className={styles.icon} />;
+    case 'publishmanagement':
+      return <IconUpload className={styles.icon} />;
+    case 'messagemanagement':
+      return <IconMessage className={styles.icon} />;
+    case 'check':
+      return <IconCheckCircle className={styles.icon} />;
+
+
     default:
       return <div className={styles['icon-empty']} />;
   }
